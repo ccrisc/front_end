@@ -20,12 +20,12 @@ ui <- fluidPage(
 server <- function(input, output, session, e = external_ip, p =  port) {
   output$sum <- renderText({
     # GET request from an API
-    base = "http//35.228.247.60:5000/" #base = paste0("http://", e,":", p, "/"),
-    r <- httr::GET(url= base, #paste0("http://", e,":", p, "/__doc__/"),
-                        path="get_sum",
-                        query=list(x=input$x,
-                        y= input$y), verbose()
-    )
+    base = "http//34:88.192.29:500/" #base = paste0("http://", e,":", p, "/"),
+     r <- httr::GET(url= base, #paste0("http://", e,":", p, "/__doc__/"),
+                         path="get_sum",
+                         query=list(x=input$x,
+                         y= input$y), verbose()
+     )
     fromJSON(content(r, "text"))
   })
 }
